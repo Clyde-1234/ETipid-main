@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Tipid Dashboard</title>
+    <!-- Bootstrap CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- PopperJS lib-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!--FontAwesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- External JS Script-->
+    <script src="./dashboard_script.js"></script>
+    <!-- ChartJS Library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
+    <!--Extenrnal Stylesheets-->
+    <link rel = "stylesheet" href="./spinner.css">
+    <link rel="stylesheet" href="dashboard.css">
+
+    <!-- Google text-->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Livvic:wght@400;500;600;700;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Fav icon-->
+    <link rel="icon" type="image/x-icon" href="./pictures/logo.png">
+  
+  </head>
+<body>
+ <div id="particles-js">
+   <!--SPINNER -->
+   <div class="spinner_wrapper">
+    <div class="text-center">
+        <div class="spinner-border text-light" role="status" style="width: 3rem; height: 3rem;">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
+    <script src="./spinner.js"></script>
+  <!--SPINNER END-->
+  <div class="particles-js">
+
+
+  <div class="container-fluid">
+  <div class="row">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid navv">
+      <a class="navbar-brand" href="#">
+        <!-- please make sure to either make a div
+        or a specific height in rem for the img-->
+        <img class="img-fluid" src="pictures/logo5.png" alt="Etipidlogo">
+    </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse p-2" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <!-- Anchor and link landing page-->
+            <a class="nav-link active" aria-current="page" href="./landing-page.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <!-- Anchor and link landing page-->
+            <a class="nav-link active" aria-current="page" href="./dashboard.html">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <!-- Anchor and link landing page-->
+            <a class="nav-link active" aria-current="page" href="./note_page.html">Spend List</a>
+          </li>
+          <li class="nav-item tt" data-bs-placement="bottom" title="Coming soon">
+            <!-- Don't remove this is just for demo-->
+            <a class="nav-link disabled" href="#">Pricing</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+</div>
+    <div class="container-fluid">
+        <div class="row justify-content-center row">
+            <!-- left side the days-->
+         
+            <div class="col-md-8 col-lg-5 p-4 cont1 my-1 mx-5">
+                <!-- Button trigger modal -->
+                    <div class="row px-3">
+                        <button type="button" class="btn btn-outline-light p-5" data-bs-toggle="modal" data-bs-target="#Days">
+                            Days Active
+                        </button>
+                    </div>
+        
+                    <!-- Modal -->
+                    <div class="modal fade" id="Days" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Active Days</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="Submit()"></button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="row row-cols-1 align-content-center justify-content-center">
+                              <div class="col-10 p-3 cont3 ">
+                                <h6 class="display-6 tt"  data-bs-placement="right" title="Show per week allocation"><i class="fa-solid fa-sun"></i> &nbsp;Days Active</h6>
+                                <form id="days-act-inact">
+                                <div class="form-check form-switch m-3">
+                                    <label for="monday-tog" class="form-check-label"><h6>Monday</h6></label>
+                                    <input type="checkbox" id="monday-tog" class="form-check-input">
+                                </div>
+                                
+                                <div class="form-check form-switch m-3">
+                                    <label for="tuesday-tog" class="form-check-label"><h6>Tuesday</h6></label>
+                                    <input type="checkbox" id="tuesday-tog" class="form-check-input">
+                                </div>
+                                <div class="form-check form-switch m-3">
+                                    <label for="wednesday-tog" class="form-check-label"><h6>Wednesday</h6></label>
+                                    <input type="checkbox" id="wednesday-tog" class="form-check-input">
+                                </div>
+                                <div class="form-check form-switch m-3">
+                                    <label for="thursday-tog" class="form-check-label"><h6>Thursday</h6></label>
+                                    <input type="checkbox" id="thursday-tog" class="form-check-input">
+                                </div>
+                                <div class="form-check form-switch m-3">
+                                    <label for="friday-tog" class="form-check-label"><h6>Friday</h6></label>
+                                    <input type="checkbox" id="friday-tog" class="form-check-input">
+                                </div>
+                                <div class="form-check form-switch m-3">
+                                    <label for="saturday-tog" class="form-check-label"><h6>Saturday</h6></label>
+                                    <input type="checkbox" id="saturday-tog" class="form-check-input">
+                                </div>
+                                <div class="form-check form-switch m-3">
+                                    <label for="sunday-tog" class="form-check-label"><h6>Sunday</h6></label>
+                                    <input type="checkbox" id="sunday-tog" class="form-check-input">
+                                </div>
+                            </form>
+                        </div>
+                      </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    <!-- Button trigger modal -->
+                    <div class="row px-3">
+                        <button type="button" class="btn btn-outline-light g-4 p-5" data-bs-toggle="modal" data-bs-target="#Inputs">
+                            Allocation Settings
+                        </button>
+                    </div>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="Inputs" tabindex="-1 " aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Change Input</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="updateChart(); Submit()"></button>
+                            </div>
+                            <div class="modal-body">
+                              
+                              <!-- Amount-->
+                                      <div class="col-12-sm-4 p-3 cont3">
+                                        <h6 class='display-6 tt' data-bs-placement="right" title="Total Budget Amount"> <i class="fas fa-cog"></i> &nbsp;Amount</h6>
+                                        <div class="input-group mb-3 ">
+                                          <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-peso-sign"></i></span>
+                                            <input type="number" class="form-control " id="amt" placeholder="Amount" value = 0 >
+                                          </div>
+                                           
+                                         
+                                        <h6 class='display-6'> <i class="fas fa-cog"></i> &nbsp;Percent</h6>
+                                         <!--Emergency text field-->
+                                        <div class="col-lg-6">
+                                          <label for="emergency_value" class="form-label">Emergency</label>
+                                          <div class="input-group mb-3">
+                                            <input type="number" class="form-control p-3 " id="emergency_value" value="10">
+                                            <span class="input-group-text"><i class="fas fa-percent"></i></span>
+                                          </div>
+                                        </div>
+                                        <!--Savings text field-->
+                                        <div class="col-lg-6">
+                                            <label for="savings_value" class="form-label">Savings</label>
+                                            <div class="input-group mb-3">
+                                            <input type="number" class="form-control p-3" id="savings_value" value="45">
+                                            <span class="input-group-text"><i class="fas fa-percent"></i></span>
+                                          </div>
+                                        </div>
+                                        <!--wants text field-->
+                                        <div class="col-lg-6">
+                                            <label for="wants_value" class="form-label">Wants</label>
+                                            <div class="input-group mb-3"> 
+                                            <input type="number" class="form-control p-3" id="wants_value" value="25">
+                                            <span class="input-group-text"><i class="fas fa-percent"></i></span>
+                                            </div>
+                                        </div>
+                                        <!--Needs text field-->
+                                        <div class="col-lg-6">
+                                            <label for="needs_value" class="form-label">Needs</label>
+                                            <div class="input-group mb-3"> 
+                                            <input type="number" class="form-control p-3" id="needs_value" value="20">
+                                            <span class="input-group-text"><i class="fas fa-percent"></i></span>
+                                            </div>
+                                        </div> 
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+                
+
+                <div class="row justify-content-end mt-5 row-cols-lg-1 gy-3">
+                    <form id= 'goals_form'>
+                    <h6 class="display-6 tt text-light"  data-bs-placement="right" title="Set your goals!"><i class="fas fa-trophy"></i> &nbsp;Set Goal</h6>
+                        <div class="my-4 input-group ">
+                          <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-peso-sign"></i></span>
+                            <input type="number" class="form-control p-3" id="goals_num" placeholder="My Goal" value = 0 >
+                            
+                        </div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-light p-3" data-bs-toggle="modal" data-bs-target="#progress">
+                        Progress
+                    </button>
+                
+
+                    <!-- Modal -->
+                    <div class="modal fade " id="progress" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog " role="document">
+                        <div class="modal-content cont3">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="progresslabel"><i class="fa-solid fa-bars-progress"></i> &nbsp;Progress</h5>
+                        </div>
+
+                    <div class="modal-body text-center">
+                        <h4 class="display-6"><i class="fa-solid fa-clock"></i> &nbsp;Time Left</h4>
+                        
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="days-tab" data-bs-toggle="tab" data-bs-target="#days" type="button" role="tab" aria-controls="days" aria-selected="true">Days</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#mins" type="button" role="tab" aria-controls="mins" aria-selected="false">Minutes</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#sec" type="button" role="tab" aria-controls="sec" aria-selected="false">Seconds</button>
+                            </li>
+                        </ul>
+                        
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="days" role="tabpanel" aria-labelledby="day-tab">
+                            <!-- DAYS-->
+                            <div class="form-floating mb-3 ">
+                                <input type="number" class="form-control " id="modal_days" placeholder="Amount" value = "0" readonly >
+                                <label for="modal_days">Days to Go!</label>
+                            </div>
+                            </div>
+                            <div class="tab-pane fade" id="mins" role="tabpanel" aria-labelledby="min-tab">
+                            <!-- MINUTES-->
+                            <div class="form-floating mb-3 ">
+                                <input type="number" class="form-control " id="modal_min" placeholder="Amount" value = "0" readonly >
+                                <label for="modal_min">Minutes to Go!</label>
+                            </div>
+                            </div>
+                            <div class="tab-pane fade" id="sec" role="tabpanel" aria-labelledby="-tab">
+                            <!-- MINUTES-->
+                            <div class="form-floating mb-3 ">
+                                <input type="number" class="form-control " id="modal_sec" placeholder="Amount" value = "0" readonly >
+                                <label for="modal_sec">Seconds to Go!</label>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+           
+            
+            
+
+            <!-- CENTER-->
+            <!-- ChartJS Doughnut-->
+            <!-- backend should try and change the variables
+            in the data array down below for dyanmic state change-->
+            <!--script is below for all functions (unfinished pa na)-->
+            <div class="col-lg-4 col-md-8 p-3 dvcenter my-1 mx-5" >
+                    
+              <canvas id="chartId" aria-label="chart" height="150" width="350"></canvas>
+               
+            </div>
+          
+     
+        
+     
+      <!--container for the input fields-->
+
+        <!-- RIGHT SIDE -->
+        <!--I put read only text input fields but feel free to change it to
+        buttons or cuztomize it, up to you na na-->
+        <div class="col-xl-11 col-12 col-md-8 mt-md-0 p-3 cont3 mt-lg-5 mx-lg-5 gx-lg-5 px-lg-5">
+            
+            <!-- toggle switch for radios-->
+            <h6 class='display-6'> <i class="fas fa-cog"></i> &nbsp;Output</h6>
+            <input type="radio" class="btn-check tt" data-bs-placement="top" title="Show per week allocation" name="options" id="week" autocomplete="off" onclick="Submit()" checked>
+            <label class="btn btn-outline-light p-3" for="week">Week</label>
+
+            <input type="radio" class="btn-check tt" data-bs-placement="top" title="Show per day allocation" name="options" id="day" autocomplete="off" onclick="Submit()">
+            <label class="btn btn-outline-light p-3" for="day">Day</label>
+            
+            <div class="my-3">
+              <label for="emergency" class="form-label"><h6>Emergency</h6></label>
+              <div class="input-group ">
+                <span class="input-group-text"><i class="fa-solid fa-peso-sign"></i></span>
+                <input type="number" class="form-control p-3" id="emergency" placeholder="Emergency" readonly>
+              
+              </div>
+            </div>
+
+            <div class="my-3">
+              <label for="savings"class="form-label"><h6>Savings</h6></label>
+              <div class="input-group ">
+                <span class="input-group-text"><i class="fa-solid fa-peso-sign"></i></span>
+                <input type="number" class="form-control p-3 " id="savings" placeholder="Savings" readonly>
+              </div>
+                
+            </div>
+
+            <div class="my-3">
+              <label for="wants" class="form-label"><h6>Wants</h6></label>
+              <div class="input-group "> 
+                <span class="input-group-text"><i class="fa-solid fa-peso-sign"></i></span>
+                <input type="number" class="form-control p-3" id="wants" placeholder="Wants" readonly>
+              </div>
+               
+            </div>
+
+            <div class="my-3">
+              <label for="needs" class="form-label"><h6>Needs</h6></label>
+              <div class="input-group "> 
+                <span class="input-group-text"><i class="fa-solid fa-peso-sign"></i></span>
+                <input type="number" class="form-control p-3 " id="needs" placeholder="Needs" readonly>
+              </div>
+                
+            </div>
+            <!-- The clear button for the fields-->
+            <div class="row g-2 justify-content-center row-cols-1 my-2">
+                <button type="button" class="btn btn-outline-light py-3 px-4 tt" data-bs-placement="top" title="Clear the outputs" onclick="clearfield()">
+                    Clear
+                </button>
+            </div>
+
+        </div>
+          
+      </div>
+    </div>
+
+      <!-- My lovely toasts hihi-->
+      
+      <!--Savings must not be zero!-->
+      <div class="tost-container position-fixed bottom-0 end-0 p-3" >
+        <div class="toast text-bg-light " role="alert" aria-live="assertive" aria-atomic="true" id="savings_not_zero">
+            <div class="toast-header">
+              <i class="fas fa-exclamation-circle mx-1"></i>
+              <strong class="me-auto">Alert!</strong>
+              <button type="button " class="ml-2 mb-1 btn-close-primary border-0" data-bs-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="toast-body">
+             Savings must not be zero!
+            </div>
+          </div>
+          
+      <!--Must select at least one day!-->
+          <div class="toast text-bg-light" role="alert" aria-live="assertive" aria-atomic="true" id="one_act_day">
+            <div class="toast-header">
+              <i class="fas fa-exclamation-circle mx-1"></i>
+              <strong class="me-auto">Alert!</strong>
+              <button type="button" class="ml-2 mb-1 btn-close-primary border-0" data-bs-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="toast-body">
+              Must select at least one active day!
+            </div>
+          </div>
+          
+        <!--Values must add up to 100-->
+          <div class="toast text-bg-light" role="alert" aria-live="assertive" aria-atomic="true" id="add_up_to">
+            <div class="toast-header">
+              <i class="fas fa-exclamation-circle mx-1"></i>
+              <strong class="me-auto">Alert!</strong>
+              <button type="button" class="ml-2 mb-1 btn-close-primary border-0" data-bs-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="toast-body">
+              Values must add up to a hundred!
+            </div>
+          </div>
+        </div>
+
+      
+
+      <!-- internal js feel free to move to another external script-->
+      <script>
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+          const ModalOverlayInput = document.getElementById("Inputs")
+          const ModalOverlayDays = document.getElementById("Days")
+          ModalOverlayInput.addEventListener('click', (event) => {
+            if (event.target === ModalOverlayInput){
+              Submit()
+              updateChart()
+            }})
+          ModalOverlayDays.addEventListener('click', (event) => {
+            if (event.target === ModalOverlayDays){
+              Submit()
+            }})
+        })
+
+        //set up block
+        
+        const data ={
+          labels: ["Emergency", "Savings", "Needs", "Wants"],
+     
+               datasets: [{
+                label: "online tutorial subjects",
+                data: [10, 45, 25, 20],
+                backgroundColor: ['skyblue', 'darkblue', 'blue', 'white', ],
+                hoverOffset: 5,
+                
+                
+               }],
+
+            };
+
+
+        //config block 
+        const config ={
+          type: 'doughnut',
+            data,
+            options: {
+               responsive: true,
+              
+            }
+
+        }
+
+        // init block
+        const chartId = new Chart(
+          document.getElementById("chartId").getContext("2d"),
+          config
+        )
+
+        //js funct
+   
+
+        const emergency = document.getElementById('emergency_value')
+        const savings = document.getElementById('savings_value')
+        const wants = document.getElementById('wants_value')
+        const needs = document.getElementById('needs_value')
+        const update_but = document.getElementById('update_but')
+
+        
+
+        function updateChart(){
+          
+          chartId.data.datasets[0].data[0] = emergency.value 
+          chartId.data.datasets[0].data[1] = savings.value
+          chartId.data.datasets[0].data[2] = wants.value  
+          chartId.data.datasets[0].data[3] = needs.value 
+          
+          var sum = parseInt(emergency.value) + parseInt(savings.value) + parseInt(wants.value) + parseInt(needs.value)
+          if (sum == 100){
+          chartId.update()
+          }
+
+        }
+        
+// TOOL TIP HANDLING
+ const tooltips = document.querySelectorAll('.tt')
+ tooltips.forEach(t => {
+  new bootstrap.Tooltip(t)
+ })
+
+      </script>
+    </div>
+     </div>
+  
+  <script src="./particlejs/particles.js"></script>
+  <script src="./particlejs/app.js"></script>
+</body>
+</html>

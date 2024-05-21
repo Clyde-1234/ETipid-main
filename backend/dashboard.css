@@ -1,0 +1,204 @@
+h6, .btn, .modal-content{
+    /* font-family: "Livvic", sans-serif; */
+    font-family: "Orbitron", sans-serif;
+    font-size: 1rem;
+    color: aliceblue;
+  
+  }
+
+  .nav-link{
+    font-family: "Orbitron", sans-serif;
+    font-size: 1rem;
+    color: aliceblue;
+  
+  }
+  .nav-link {
+    .active {
+      font-family: "Orbitron", sans-serif;
+      font-size: 1rem;
+      color: rgb(0, 0, 0);
+    }
+  }
+
+  .navv {
+    background: linear-gradient(-20deg, rgb(183, 33, 255) 0%, rgb(33, 212, 253) 100%);;
+    font-family: "Orbitron", sans-serif;
+    font-size: 1rem;
+    border-radius: 50px;
+  }
+
+  .modal {
+    border-radius: 50px;
+  }
+
+  #chartId{
+    color: black;
+  }
+  .toast-header {
+    color:rgb(255, 255, 255);
+    background-color: rgb(4, 190, 254);
+  }
+  
+  .img-fluid {
+    width: 4rem;
+    height: auto;
+    transition: 0.5s;
+  }
+  
+  .img-fluid:hover {
+    transition: 0.5s;
+    transform: scale(1.05);
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    transition: 0.3s;
+    position: relative;
+  }
+  
+  .form-control:focus{
+    background-color: rgb(240, 237, 237);
+    color:rgb(96, 98, 100);
+    box-shadow: 0 0 10px rgb(73, 83, 94);
+  }
+  .nav-link::after {
+    content: " ";
+    opacity: 0;
+    height: 2px;
+    width: 100%;
+    transition: 0.3s;
+    background-color: #222;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .nav-link:hover::after {
+    opacity: 1;
+  }
+  
+  .nav-link:hover {
+    text-shadow: 0 0 15px whitesmoke;
+    transition: 0.3s;
+    transform: scale(1.05);
+  }
+    
+  .btn-outline-secondary:hover {
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+  }
+  
+  .btn-secondary {
+    border-radius: 5px;
+  }
+  .btn-secondary:hover {
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+  }
+  
+  .row-cols-md-4 {
+    background-color: whitesmoke;
+    border-radius: 10px;
+  }
+  
+  
+  .fa-sun:hover {
+    animation: animation 0.4s linear;
+    color: #FFFFFF;
+  }
+  
+  .fa-trophy:hover {
+    animation: animation 0.4s linear;
+    color: #FFFFFF;
+  }
+  
+  .fa-clock:hover {
+    animation: animation 0.4s linear;
+    color: #FFFFFF;
+  }
+  
+  .fa-cog:hover {
+    animation: animation 0.4s linear;
+    color: #FFFFFF;
+  }
+  
+  @keyframes animation {
+    40% {
+        transform: scale(1.4);
+    }
+  
+    60% {
+        transform: scale(0.8);
+    }
+  
+    80% {
+        transform: scale(1.2);
+    }
+  
+    100% {
+        transform: scale(1);
+    }
+  }
+  
+  /* change gradients here */
+  
+  :root{
+     --grad1 :rgb(172, 203, 238);
+     --grad2: rgb(231, 240, 253);
+     --grad3: rgb(0, 198, 251);
+     --grad4: rgb(0, 91, 234);
+     --grad5: rgb(146, 254, 157);
+     --grad6: rgb(0, 201, 255);
+     --grad7: rgb(228, 228, 228);
+  }
+  .cont1, .cont4, .dvcenter {
+    /* background: linear-gradient(to top, rgb(68, 129, 235) 0%, rgb(4, 190, 254) 100%); */
+    background: linear-gradient(-20deg, rgb(183, 33, 255) 0%, rgb(33, 212, 253) 100%);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+    border: 1px solid rgba(255, 247, 247,0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.42);
+    border-radius: 50px;
+  }
+  body{
+  
+    height: 100vh;
+    width: 100%;
+    background: url(./pictures/5156620.jpg);
+    
+  
+  }
+  
+  
+  .cont3 {
+    /* background: linear-gradient(to top, rgb(68, 129, 235) 0%, rgb(4, 190, 254) 100%); */
+    background: linear-gradient(-20deg, rgb(183, 33, 255) 0%, rgb(33, 212, 253) 100%);;
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 247, 247,0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0,0.37);
+    border-radius: 50px;
+  }
+  
+  
+  
+  #particles-js{
+    height:100px;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  @keyframes color{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+  
+    100%{
+        background-position: 0% 50%;
+    }
+  }
+  
+  

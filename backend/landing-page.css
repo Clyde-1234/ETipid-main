@@ -1,0 +1,62 @@
+.body {
+  /* font-family: "Livvic", sans-serif; */
+  font-family: Arial, sans-serif;
+  background: url(pictures/background.png) no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+}
+
+.web-name {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  margin-top: 90px;
+  color: white;
+  font-family: "Orbitron", Arial;
+}
+
+.par-1 {
+  font-size: 4rem;
+  line-height: 4.2rem;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-family: "Orbitron", Arial;
+}
+  
+.image-container {
+  max-width: 100%;
+  position: relative;
+  height: auto;
+  margin-left: 70px;
+  padding: 0;
+  
+  
+}
+.image-container img {
+  width: 30rem;
+  margin: 0;
+  height: 70vh;
+  padding: 0;    
+}
+  
+@media (max-width: 1400px) {
+  
+  .web-name {
+      font-size: 1.8rem;
+  }
+
+  .par-1 {
+     font-size: 3rem; 
+     line-height: 3.1rem;
+  }
+
+  .image-container {
+      margin-top: 50px;
+      margin-left: 0;
+  }
+
+  .image-container img {
+      width: 25rem;
+  }
+}
+
